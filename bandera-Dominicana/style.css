@@ -1,0 +1,122 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.sky {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    position: relative;
+    z-index: 1;
+}
+
+.cloud {
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.8;
+    filter: blur(5px);
+}
+.cloud-1 { width: 150px; height: 50px; top: 10%; left: 5%; }
+.cloud-2 { width: 200px; height: 70px; top: 20%; left: 30%; }
+.cloud-3 { width: 180px; height: 60px; top: 15%; left: 60%; }
+
+.mountain-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.mountain {
+    width: 150%;
+    height: 200px;
+    background: linear-gradient(#228B22, #3CB371);
+    transform: rotate(3deg) translateY(50px);
+    transform-origin: 0% 100%;
+    position: absolute;
+    bottom: -150px;
+    left: -25%;
+}
+
+.field {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(#2E8B57, #6B8E23);
+    position: absolute;
+    bottom: -10px;
+    z-index: 3;
+}
+
+.flag-pole {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 4;
+}
+
+.pole {
+    width: 8px;
+    height: 350px;
+    background: #bbb;
+    border-radius: 5px;
+}
+
+.flag {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.quadrant { position: relative; }
+.blue-top-left { background-color: #002D72; }
+.red-top-right { background-color: #CE1126; }
+.red-bottom-left { background-color: #CE1126; }
+.blue-bottom-right { background-color: #002D72; }
+
+.cross-horizontal, .cross-vertical {
+    position: absolute;
+    background: white;
+}
+.cross-horizontal { width: 100%; height: 20%; top: 40%; left: 0; }
+.cross-vertical { width: 20%; height: 100%; top: 0; left: 40%; }
+
+.coat-of-arms {
+    width: 30px; /* Ajusta el tamaño del escudo según sea necesario */
+    height: 30px; /* Ajusta el tamaño del escudo según sea necesario */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f3/Escudo_de_la_República_Dominicana.svg');
+    background-size: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Asegura que el escudo esté por encima de la cruz */
+}
+
+.flag {
+    animation: wave 4s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%, 100% { transform: skewY(0) scaleY(1); }
+    50% { transform: skewY(5deg) scaleY(0.95); }
+}
